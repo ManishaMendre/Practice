@@ -1,0 +1,140 @@
+Anonymous function:-
+-------------------
+
+sometimes we can declare a function without any name,such type of nameless functions are called anonymous functions or lambda functions.
+The fun is basically single line code.
+We are not giving name to the fun but the function values are saved on the variable, when we call variable then get the value.
+
+*main purpose of annonyme is :
+------------------------------
+1.instant use
+2.reduce code length
+3.reduce time
+4.one liner code
+5.code readability increases
+6.code  efficiency increases
+7.programming improvement.
+
+Note:- By using Lambda function we can write very concise code that readability of the program will be improved.
+
+lambda function:----we can define by using lambda keyword.
+----------------
+syntax:-
+variable = lambda parameters:expression
+
+
+e.g----#WAP to create a lambda function to find squre
+
+s = lambda n:n*n
+print("the squre of 4 is:",s(4))
+
+----#WAP lambda to find biggest no.
+
+s = lambda a,b:a if a>b else b
+print("The biggest no is:",s(10,20))
+
+---WAP lambda to find the sum
+s = lambda a,b: a+b
+print("the sum is",s(10+20))
+
+
+Note:-
+1.Lambda function interally returns expression value (result) and we are not required to write return statement explicitly.
+
+
+2.Someties we can pass function as argument to another function.in such cases lambda function are best choice.
+e.g: a= lambda n:n*n
+     def sum (a,b)
+
+[the fun inside fun is called as nexted fun and it is developers work
+ex, def sum:
+      def sub:
+         def mul] example of nexted fun
+sometimewe can use lambda fun no need to use nexted fun
+
+======================
+#FUNCTIONS OF LAMBDA
+-----------------------
+1.filter
+2.map
+3.reduce
+these are in-built fun and these are used with or without lamda function but mostly used with the lambda fun.
+
+1.filter() function:-
+------------------
+we can use filter() function to filter values from the given sequence based on some condition.
+--it needs sequence but sequence is should be mutable like list,set,dict. 
+
+syntax:-
+variable= filter(function,sequence)
+--the functions argument is only responsible and it check condition and apply on the sesquence.
+-----------------------------------------------------------------------------------------------
+#WAP to filter only even no.
+without lamda
+l = [5,10,15,20,25,30,35,40,45,50]
+
+def is_even(x):
+	if x%2==0:
+	return true
+else:
+	return false
+
+even = filter(is_even,l)
+result is  -------------<filter object at 0x0000014D0A3EBEB0>
+
+[here it is not showing result, it shows only loc ... it is not possible to strore no of data on single variable , hence multiple data is their so we need collection to strore data so list is used before filter..]
+
+even = list(filter(is_even,l))
+result----shows proper result
+---------------------------------------------------------------------------------------
+with lambda
+l = [5,10,15,20,25,30,35,40,45,50]
+s = list(filter(lambda x:x%2==0,l))
+print(s)
+
+
+map() function:-
+-------------
+For every element present in the given sequence apply some functionality and generate new element with the required modification,For this requirement we should go for map() function.
+
+syntax:-
+
+variable= map(function,sequence)
+
+l = [5,10,15,20,25,30,35,40,45,50]
+
+s = list(map(lambda x:2*x,l))
+print(s)
+
+ reduce():-
+-----------
+
+reduce function reduce sequence of element into a single element by applying the specified function.
+
+syntax:-
+
+variable= reduce(function,sequence)
+
+reduce() function present in functools module and hence we should import it.it is not get directly.
+
+from functools import *
+
+l = [10,20,30,40]
+s = reduce(lambda x,y:x+y,l)
+print(s)
+
+[WITHOUT LAMBDA: S= [10,20,30,40,50,]
+def add (x,y):
+    c = x+y
+    return c
+
+from  functools import *
+summ = reduce(add, s)
+print(summ)] --------------------150
+
+
+
+--the above example is possible by for loop but forloop follows chain system ,if lot of data avilable then by forloop it gives late result
+--but by lambda fun reduce it shows fast result
+--no list is requred it converts single data also
+
